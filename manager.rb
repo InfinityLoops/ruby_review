@@ -18,6 +18,21 @@ class Employee
   end
 end
 
+class Manager < Employee
+  def initialize(input_options)
+    super(input_options)
+    @employees = input_options[:employees]
+  end
+
+  def send_report
+    puts "Sending Email..."
+    # the code to send email
+    puts "Email sent."
+  end
+end
+
+# runner code
+
 employee_1 = Employee.new(
                           first_name: "Tim", 
                           last_name: "Taylor", 
@@ -32,8 +47,15 @@ employee_2 = Employee.new(
                           active: true
                           )
 
-employee_1.print_info
-employee_2.print_info
+manager = Manager.new(
+                      first_name: "Betty",
+                      last_name: "Crocker",
+                      salary: 100000,
+                      active: true,
+                      employees: [employee_1, employee_2]
+                      )
+
+p manager
 
 
 
