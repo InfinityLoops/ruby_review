@@ -1,6 +1,6 @@
 class Employee
   attr_reader :first_name, :salary, :active
-  attr_writer :first_name, :last_name
+  attr_writer :first_name, :last_name, :active
 
   def initialize(input_options)
     @first_name = input_options[:first_name]
@@ -17,30 +17,3 @@ class Employee
     @salary = 1.05 * @salary
   end
 end
-
-employee_1 = Employee.new(
-                          first_name: "Tim", 
-                          last_name: "Taylor", 
-                          salary: 70000, 
-                          active: true
-                          )
-
-employee_2 = Employee.new(
-                          first_name: "Walter", 
-                          last_name: "Cronkite", 
-                          salary: 80000, 
-                          active: true
-                          )
-
-employee_1.print_info
-employee_2.print_info
-
-
-
-
-
-
-
-
-
-
